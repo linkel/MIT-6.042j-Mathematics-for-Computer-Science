@@ -1,0 +1,35 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+\title{MIT 6.042J HW1 2005}
+\author{Kelly Lin }
+\date{June 2019}
+
+\begin{document}
+
+\maketitle
+
+\section{Problem 1}
+
+I tried doing this problem by cubing it, which resulted in saying something was equal to something that it definitely wasn't equal, but when I looked at the solution they had done it by squaring it and showing that it couldn't be rational based on even numbers, so I'll try to do the problem again their way. 
+
+\section{Problem 2}
+"There is a student who has emailed exactly two other people in the class, besides possibly herself."
+Okay, so we know there's three students here. I'll call them s, t, and u. 
+\hfill \break
+$ \exists s \exists t \exists u \in S $
+\hfill \break
+s has emailed t and s has emailed u.
+\hfill \break
+$E(s,t) \wedge E(s,u)$
+\hfill \break
+s is a different student from u, and a different student from t, and same goes for u and t. 
+\hfill \break
+$s \neq u \wedge s \neq t \wedge u \neq t$
+\hfill \break
+Of the students that s has emailed, those students are either u, t, or themselves. So we can say "Every student o that s has emailed, o is equal to s, t, or u."
+$\forall o \in S E(s, o) \rightarrow o = s \vee o = t \vee o = u$
+So we can AND all of the phrases together to make the predicate. 
+
+\end{document}
+
