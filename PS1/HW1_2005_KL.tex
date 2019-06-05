@@ -16,20 +16,64 @@ I tried doing this problem by cubing it, which resulted in saying something was 
 \section{Problem 2}
 "There is a student who has emailed exactly two other people in the class, besides possibly herself."
 Okay, so we know there's three students here. I'll call them s, t, and u. 
-\hfill \break
+\\
 $ \exists s \exists t \exists u \in S $
-\hfill \break
+\\
 s has emailed t and s has emailed u.
-\hfill \break
+\\
 $E(s,t) \wedge E(s,u)$
-\hfill \break
+\\
 s is a different student from u, and a different student from t, and same goes for u and t. 
-\hfill \break
+\\
 $s \neq u \wedge s \neq t \wedge u \neq t$
-\hfill \break
+\\
 Of the students that s has emailed, those students are either u, t, or themselves. So we can say "Every student o that s has emailed, o is equal to s, t, or u."
 $\forall o \in S E(s, o) \rightarrow o = s \vee o = t \vee o = u$
 So we can AND all of the phrases together to make the predicate. 
+
+\section{Problem 3}
+
+Write in predicate form. Addition, multiplication, equality, but no constants. Prove stuff first before using. This is over the domain of the natural numbers (non-negative integers).
+\\
+a. n is the sum of three perfect squares \\
+$\exists x \exists y \exists z. x*x + y*y + z*z = n$
+\\
+I don't have to specify anything special on these since it's fine if x, y, and z are the same as each other. 
+\\
+b. x $>$ 1
+\\
+Since we can't use constants, we need to first define $x = 1$. 
+\\
+$\forall y. (y*x = y)$
+\\
+Now we can set things equal to one using the above definition. 
+\\
+$\exists y. (x > y) \wedge (y = 1)$
+\\
+Kind of confused on who takes the exists in the above line. 
+\\
+c. n is a prime number.
+\\
+Well, I know that it isn't possible to have two variables that multiply each other to become n. 
+\\
+$\neg(x*y = n)$
+\\
+Also have to declare it. So it's more like...
+\\
+$\neg (\exists x \exists y. (x > 1 \wedge y > 1 \wedge x*y = n))$
+\\
+And we know that n, the prime number, has to be bigger than 1. So altogether:
+\\
+$IS-PRIME(n) ::= (n > 1) \wedge \neg (\exists x \exists y. (x > 1 \wedge y > 1 \wedge x*y = n))$
+
+\\
+d. n is a product of two distinct primes.
+
+e. There is no largest prime number.
+
+f. Goldbach conjecture. Every even natural number $n > 2$ can be expressed as the sum of two primes. 
+
+g. Bertrand's Postulate. If $n > 1$ then there is always at least one prime p such that $n < p < 2n$.
 
 \end{document}
 
