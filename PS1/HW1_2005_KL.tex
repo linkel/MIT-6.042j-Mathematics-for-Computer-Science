@@ -1,5 +1,6 @@
 \documentclass{article}
 \usepackage[utf8]{inputenc}
+\usepackage{amsmath}
 
 \title{MIT 6.042J HW1 2005}
 \author{Kelly Lin }
@@ -17,62 +18,100 @@ I tried doing this problem by cubing it, which resulted in saying something was 
 "There is a student who has emailed exactly two other people in the class, besides possibly herself."
 Okay, so we know there's three students here. I'll call them s, t, and u. 
 \\
-$ \exists s \exists t \exists u \in S $
+\begin {align*}
+\exists s \exists t \exists u \in S 
+\end {align*}
 \\
 s has emailed t and s has emailed u.
 \\
-$E(s,t) \wedge E(s,u)$
+\begin {align*}
+E(s,t) \wedge E(s,u)
+\end {align*}
 \\
 s is a different student from u, and a different student from t, and same goes for u and t. 
 \\
-$s \neq u \wedge s \neq t \wedge u \neq t$
+\begin {align*}
+s \neq u \wedge s \neq t \wedge u \neq t
+\end {align*}
 \\
 Of the students that s has emailed, those students are either u, t, or themselves. So we can say "Every student o that s has emailed, o is equal to s, t, or u."
-$\forall o \in S E(s, o) \rightarrow o = s \vee o = t \vee o = u$
+\begin {align*}
+\forall o \in S E(s, o) \rightarrow o = s \vee o = t \vee o = u
+\end {align*}
 So we can AND all of the phrases together to make the predicate. 
+\begin {align*}
+\exists s \exists t \exists u \in S. E(s,t) \wedge E(s,u) \wedge s \neq u \wedge s \neq t \wedge u \neq t \wedge \forall o \in S. E(s, o) \rightarrow o = s \vee o = t \vee o = u
+\end {align*}
 
 \section{Problem 3}
 
 Write in predicate form. Addition, multiplication, equality, but no constants. Prove stuff first before using. This is over the domain of the natural numbers (non-negative integers).
-\\
+\\\\
 a. n is the sum of three perfect squares \\
-$\exists x \exists y \exists z. x*x + y*y + z*z = n$
+\begin {align*}
+\exists x \exists y \exists z. x*x + y*y + z*z = n
+\end {align*}
 \\
 I don't have to specify anything special on these since it's fine if x, y, and z are the same as each other. 
-\\
+\\\\
 b. x $>$ 1
 \\
 Since we can't use constants, we need to first define $x = 1$. 
 \\
-$\forall y. (y*x = y)$
+\begin {align*}
+\forall y. (y*x = y)
+\end {align*}
 \\
 Now we can set things equal to one using the above definition. 
 \\
-$\exists y. (x > y) \wedge (y = 1)$
+\begin {align*}
+\exists y. (x > y) \wedge (y = 1)
+\end {align*}
 \\
 Kind of confused on who takes the exists in the above line. 
-\\
+\\\\
 c. n is a prime number.
 \\
 Well, I know that it isn't possible to have two variables that multiply each other to become n. 
 \\
-$\neg(x*y = n)$
+\begin {align*}
+\neg(x*y = n)
+\end {align*}
 \\
 Also have to declare it. So it's more like...
 \\
-$\neg (\exists x \exists y. (x > 1 \wedge y > 1 \wedge x*y = n))$
+\begin {align*}
+\neg (\exists x \exists y. (x > 1 \wedge y > 1 \wedge x*y = n))
+\end {align*}
 \\
 And we know that n, the prime number, has to be bigger than 1. So altogether:
 \\
-$IS-PRIME(n) ::= (n > 1) \wedge \neg (\exists x \exists y. (x > 1 \wedge y > 1 \wedge x*y = n))$
-
-\\
+\begin {align*}
+IS-PRIME(n) ::= (n > 1) \wedge \neg (\exists x \exists y. (x > 1 \wedge y > 1 \wedge x*y = n))
+\end {align*}
+\\\\
 d. n is a product of two distinct primes.
-
+\begin {align*}
+\exists a \exists b. IS-PRIME(a) \wedge IS-PRIME(b) \wedge \neg (a = b) \wedge (a * b = n)
+\end {align*}
+\\\\
 e. There is no largest prime number.
-
+\\\\
+So we're going to want to do a NOT on the statement "There is a largest prime number." To say that there is a largest prime number, we want to specify that 1. there exists a p where IS-PRIME(p) and 2. for all q where q is a prime number, that it follows that there is a p bigger than or equal to q. So let's see about the first statement...
+\begin {align*}
+\exists p. IS-PRIME(P)
+\end {align*}
+And the second statement:
+\begin {align*}
+\forall q. IS-PRIME(q) \rightarrow p \leq q
+\end {align*}
+And then we want to AND those two together and then NOT the whole thing.
+\begin {align*}
+\neg (\exists p. IS-PRIME(P) \wedge (\forall q. IS-PRIME(q) \rightarrow p \leq q))
+\end {align*}
+\\\\
 f. Goldbach conjecture. Every even natural number $n > 2$ can be expressed as the sum of two primes. 
-
+\\\\
 g. Bertrand's Postulate. If $n > 1$ then there is always at least one prime p such that $n < p < 2n$.
 
 \end{document}
