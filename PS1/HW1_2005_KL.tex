@@ -12,7 +12,42 @@
 
 \section{Problem 1}
 
-I tried doing this problem by cubing it, which resulted in saying something was equal to something that it definitely wasn't equal, but when I looked at the solution they had done it by squaring it and showing that it couldn't be rational based on even numbers, so I'll try to do the problem again their way. 
+Prove that $\sqrt[3]{2}$ is not sensible. 
+\\
+I will be doing a proof by contradiction. 
+\\
+Let us assume that $\sqrt[3]{2}$ is sensible. We will set it equal to $\sqrt{\frac{a}{b}}$.
+\\
+We square both sides, then cube both sides to get
+\begin {align*}
+\frac{a}{b} = \sqrt[3]{4}
+\end {align*}
+This implies that $\sqrt[3]{4}$ is a rational number. Rational numbers can be written as a fraction in lowest terms where the numerator and denominator are both integers. 
+\begin {align*}
+\\
+\frac{x^{3}}{y^{3}} = 4
+\\
+x^{3} = 4y^{3}
+\end {align*}
+$4y^{3}$ must be even because 4, an even number, multiplied by anything turns it even.
+\\
+$x^{3}$ must be even because the right side was even. 
+\\
+x itself must be even because of that. Then $x^{3}$ must be divisible by 8. 
+\\
+That means that $4y^{3}$ must also be divisible by 8. 
+\\
+Since the 4 isn't enough to cover 8, $y^{3}$ must also be divisible by 2, therefore even. 
+\\
+Then y must be even. 
+\\ 
+If both x and y are even then they are not in lowest terms. 
+\\
+This contradiction means that $\sqrt[3]{4}$ isn't rational. 
+\\
+Since it being sensible implied that it was rational, it can't be sensible. 
+
+\\
 
 \section{Problem 2}
 "There is a student who has emailed exactly two other people in the class, besides possibly herself."
@@ -131,9 +166,44 @@ So pulling it together:
 \forall n. ((n > 2 \wedge \exists y. n = 2y) \rightarrow \exists p \exists q. IS-PRIME(p) \wedge IS-PRIME(q) \wedge (n = p + q))
 \end {align*}
 \\
-g. Bertrand's Postulate. If $n > 1$ then there is always at least one prime p such that $n < p < 2n$.
-
+g. Bertrand's Postulate. If $n > 1$ then there is always at least one prime p such that $n < p < 2n$. 
 \\\\
+Since we have already shown how to have a variable be less than another variable, how a thing can be prime, we can simply write:
+\begin {align*}
+\forall n. (n > 1) \rightarrow \exists p. IS-PRIME(p) \wedge (n < p) \wedge (p < 2n)
+\end {align*}
+\\\\
+
+\section{Problem 4}
+\\
+I will be doing a proof by contradiction.
+\\
+So a surjection is a function where every single element of the y result (codomain) is mapped to by at least one element of the x input (domain).
+\\
+Let's say there is a surjective function (aka surjection) $f: A \rightarrow P(A)$, where P is the powerset.  
+\\
+Making use of that helpful hint, let's define a set S where:
+\begin {align*}
+S ::= x \in A | x \not \in f(x)
+\end {align*}
+Looking at that first part of the definition, this means that if an x belongs to S, then it must not be in f(x):
+\\
+\begin {align*}
+(x \in S) \leftrightarrow (x \not \in f(x))
+\end {align*}
+Because x is an element that belongs to set A, by definition S must be a subset of A. If $S \subseteq A$, then S must also be in the powerset of A, P(A). So S must equal f(a) for an $a \in A$.
+\begin {align*}
+(x \in f(a)) \leftrightarrow (x \not \in f(x))
+\end {align*}
+If we plug in x for a in the above equation, it's a contradiction. 
+\begin {align*}
+(x \in f(x)) \leftrightarrow (x \not \in f(x))
+\end {align*}
+Can't be both in it and not in it at the same time. Therefore if A is infinite, there still does not exist a surjection f from A to its powerset P(A). 
+\section{Problem 5}
+
+\section{Problem 6}
+
 
 \end{document}
 
