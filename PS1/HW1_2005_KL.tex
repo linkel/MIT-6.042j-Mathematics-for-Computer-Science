@@ -71,7 +71,7 @@ Now we can set things equal to one using the above definition.
 Kind of confused on who takes the exists in the above line. 
 \\\\
 c. n is a prime number.
-\\
+\\\\
 Well, I know that it isn't possible to have two variables that multiply each other to become n. 
 \\
 \begin {align*}
@@ -112,7 +112,28 @@ And then we want to AND those two together and then NOT the whole thing.
 \\\\
 f. Goldbach conjecture. Every even natural number $n > 2$ can be expressed as the sum of two primes. 
 \\\\
+This is a combo of a couple of statements. We need to explain what an even number is. We need to explain what it means for something to be bigger than 2. This requires us to define how something can be equal to 1 (which we did do back up in problem 3b). Then we can make use of the IS-PRIME function and link it all together with a right arrow "implies". 
+\\
+This is the definition of 1:
+\begin {align*}
+\forall y. (y*m = y)
+\end {align*}
+This is the definition of a thing to be bigger than 2:
+\begin {align*}
+\exists y. (y = 1) \wedge (x > y + y)
+\end {align*}
+This is the definition of an even number:
+\begin {align*}
+\forall y. (x = 2y)
+\end {align*}
+So pulling it together:
+\begin {align*}
+\forall n. ((n > 2 \wedge \exists y. n = 2y) \rightarrow \exists p \exists q. IS-PRIME(p) \wedge IS-PRIME(q) \wedge (n = p + q))
+\end {align*}
+\\
 g. Bertrand's Postulate. If $n > 1$ then there is always at least one prime p such that $n < p < 2n$.
+
+\\\\
 
 \end{document}
 
