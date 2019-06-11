@@ -30,21 +30,21 @@ This implies that $\sqrt[3]{4}$ is a rational number. Rational numbers can be wr
 x^{3} = 4y^{3}
 \end {align*}
 $4y^{3}$ must be even because 4, an even number, multiplied by anything turns it even.
-\\
+\\\\
 $x^{3}$ must be even because the right side was even. 
-\\
+\\\\
 x itself must be even because of that. Then $x^{3}$ must be divisible by 8. 
 \\
 That means that $4y^{3}$ must also be divisible by 8. 
-\\
+\\\\
 Since the 4 isn't enough to cover 8, $y^{3}$ must also be divisible by 2, therefore even. 
-\\
+\\\\
 Then y must be even. 
-\\ 
+\\ \\
 If both x and y are even then they are not in lowest terms. 
 \\
 This contradiction means that $\sqrt[3]{4}$ isn't rational. 
-\\
+\\\\
 Since it being sensible implied that it was rational, it can't be sensible. 
 
 \\
@@ -201,9 +201,95 @@ If we plug in x for a in the above equation, it's a contradiction.
 \end {align*}
 Can't be both in it and not in it at the same time. Therefore if A is infinite, there still does not exist a surjection f from A to its powerset P(A). 
 \section{Problem 5}
+a. I don't completely understand this problem. It says to prove that 
+\begin {align*}
+\exists z. [P(z) \wedge Q(z)] \rightarrow [\exists x. P(x) \wedge \exists y. Q(y)]
+\end {align*}
+If there exists a z where we have a function that acts on z and a different one that acts on z...I guess it follows that there exists an x where that same function acts on x, and then there exists a y where that same second function acts on y, because there's nothing restricting the x and y from being z if we're in the same domain, right? It feels like we're saying something super fundamental and it's hard to know how to describe it.
+\\
+\\
+The problem set official solution says that we assume 
+\begin {align*}
+\exists z. [P(z) \wedge Q(z)]
+\end {align*}
+That it holds for some element z in the domain. It then says to let c be this element, so that we have:
+\begin {align*}
+[P(c) \wedge Q(c)]
+\end {align*}
+Then it says the first term there holds by itself. 
+\begin {align*}
+P(c)
+\end {align*}
+By Existential Generalization, there exists an x where:
+\begin {align*}
+\exists x. P(x)
+\end {align*}
+Apparently, we can say the same of that second term:
+\begin {align*}
+Q(c)
+\end {align*}
+And then the y:
+\begin {align*}
+\exists y. Q(y)
+\end {align*}
+Hence, that original conclusion we were looking at holds. 
+\begin {align*}
+\exists x. P(x) \wedge \exists y. Q(y)
+\end {align*}
+\\
+\\
+b. Prove that the converse is not valid by describing a counter model. 
+\\
+\\
+Okay, so in the above there was an expression implying another expression, which maybe I can call the first expression left-hand-side and the second expression right-hand-side. We showed that LHS implied RHS. So if LHS is true, RHS is also true and cannot be false. Just looking at that original predicate (is that the right term?), since the arrow was only going one direction, if LHS was false then RHS could still be either true or false. 
+\\
+\\
+Now thinking about the converse...the converse of that original predicate is that RHS implies LHS. So the converse would assert that if RHS is true, LHS cannot be false. Let's describe a counter model that has a case where RHS is true but LHS is false. Here's the converse:
+\begin {align*}
+\exists x. P(x) \wedge \exists y. Q(y) \rightarrow \exists z. [P(z) \wedge Q(z)] 
+\end {align*}
+Let's say the domain is [1, 3]. Inclusive between 1 and 3, and let's say it has to be integers. So we want to say that the following expression is true:
+\begin {align*}
+\exists x. P(x) \wedge \exists y. Q(y)
+\end {align*}
+So let's say that the function P just takes the input and checks if the input is equal to 1. So if x is equal to 1 then P(x) is true. And let's say that the function Q takes the input and checks if the input is equal to 3. So if x is equal to 3 then Q(x) is true. We can see then that in the case of x being 1 and y being 3, that P(x) and Q(y) are then true. 
+\\
+\\
+However, that other expression:
+\begin {align*}
+\exists z. [P(z) \wedge Q(z)]
+\end {align*}
+Is now false. Because z can only be 1, 2, or 3, and whichever one it is, it'll fail one or more of the functions. 
+Hence the converse is not true. 
 
 \section{Problem 6}
-
-
+a. Give an example where the following result fails (see problem set).
+\\
+\\
+The False Theorem fails when A and D are empty sets, and C and B are nonempty sets. L becomes C X B and R becomes zero.
+\\\\
+b. Identify the mistake in the following proof.
+\\
+\\
+The mistake is with the third line to the fourth line of the proof. It states that for L:
+\begin {align*}
+(x \in A \vee x \in C) \wedge (y \in B \vee y \in D)
+\end {align*}
+if and only if R:
+\begin {align*}
+(x \in A \wedge y \in B) \vee (x \in C \wedge y \in D)
+\end {align*}
+But these two expressions are NOT equivalent. If we flip L to be in the same "format" that R is written in, L becomes:
+\begin {align*}
+(x \in A \wedge y \in B) \vee (x \in A \wedge y \in D) \vee (x \in C \wedge y \in B) \vee (x \in C \wedge y \in D)
+\end {align*}
+So you can see that L encompasses more things than R. R is more restrictive. 
+\\\\
+c. Fix the proof to show that $R \subseteq L$
+\\
+\\
+The if and only if after the third line's expression can be changed to if. Iff is bidirectional in the implication, whereas here, the third line will be true if the fourth line is true, since the fourth line is more stringent. So it's like fourth line implies the third line, but third line does not imply the fourth line. 
+\\\\
+The problem set official solution says to say "which will be true when", which does seem a bit clearer than just an if. 
 \end{document}
 
