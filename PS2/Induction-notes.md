@@ -72,3 +72,40 @@ I don't know that I'd be clever enough to think of subtracting the eq from the o
 
 That's pretty cool though. 
 
+# Induction as a Reasoning Tool
+
+This section's example shows a courtyard grid with dimensions 2^n x 2^n. 
+
+In the special case n = 0, the entire courtyard is just one square--otherwise there's four central squares. 
+The example says that a central square will have a statue. However, this courtyard is tiled with L shaped tiles that consist of three squares. 
+
+For larger values of n, is there a way to tile this courtyard with L-shaped tiles and a statue in the center? 
+
+We have a theorem 2.3:
+For all n bigger than or equal to zero, there exists a tiling of a 2^n x 2^n courtyard with state in a central square. 
+
+## Doomed attempt at proof
+
+We might try...
+
+Let P(n) be the proposition that there exists a tiling of a 2^n x 2^n courtyard with statue in the center. 
+
+Base case: P(0) is true because statue fills the whole courtyard. 
+
+Inductive step: Assume that there is a tiling of a 2^n x 2^n courtyard with statue in the center for some n greater than or equal to 0. We must prove that there is a way to tile a 2^(n+1) x 2^(n+1) courtyard with statue in the center. 
+
+Whoa, I guess being able to tile a small courtyard with the statue in the center doesn't help me with tiling a larger one. Don't know how to bridge this gap between P(n) and P(n+1). What the heck do we do then?
+
+Look for a stronger induction hypothesis...one that implies the previous one. 
+
+How about a P(n): For every location of Bill in a 2^n x 2^n courtyard, there exists a tiling of the remainder. 
+
+## Successful attempt at proof
+
+Let P(n) be the proposition that for every location of Bill in a 2^n x 2^n courtyard, there exists a tiling of the remainder. 
+
+Base case: P(0) is true because statue fills the whole courtyard. 
+
+Inductive step: Assume that P(n) is true for some n greater than or equal to 0. That is, for every location of statue in this courtyard, there exists a tiling of the remainder. Divide the 2^(n+1) x 2^(n+1) courtyard into four quadrants, each 2^n x 2^n. One quadrant contains statue. Place a temporary statue in each of the three centra squares lying outside this quadrant. We can tile each of the four quadrants by the induction assumption. Replacing the three temporary statues with the single L-shaped tile now leaves us with one statue again. Looks like P(n) implies P(n+1) for all n bigger than or equal to zero. Our theorem follows as a special case. (Is it the case of when the statue is only in the central squares?)
+
+I'm not sure how much I understand this! Why is it that having the statues in the central square, then replacing them with the L tile, also imply that the statue in that upper right central subsection can be moved to that gap in the L shaped tiles and also tile the rest of it acceptably?
