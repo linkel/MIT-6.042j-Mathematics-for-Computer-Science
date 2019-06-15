@@ -109,3 +109,46 @@ Base case: P(0) is true because statue fills the whole courtyard.
 Inductive step: Assume that P(n) is true for some n greater than or equal to 0. That is, for every location of statue in this courtyard, there exists a tiling of the remainder. Divide the 2^(n+1) x 2^(n+1) courtyard into four quadrants, each 2^n x 2^n. One quadrant contains statue. Place a temporary statue in each of the three centra squares lying outside this quadrant. We can tile each of the four quadrants by the induction assumption. Replacing the three temporary statues with the single L-shaped tile now leaves us with one statue again. Looks like P(n) implies P(n+1) for all n bigger than or equal to zero. Our theorem follows as a special case. (Is it the case of when the statue is only in the central squares?)
 
 I'm not sure how much I understand this! Why is it that having the statues in the central square, then replacing them with the L tile, also imply that the statue in that upper right central subsection can be moved to that gap in the L shaped tiles and also tile the rest of it acceptably?
+
+# Faulty Induction Proof Example
+
+False theorem: All horses are the same color. 
+
+Okay, so we need to reformulate this assertion because there's no n in it--we need to make the n explicit. Maybe this is a thing that will usually be done in some other proof examples. 
+
+So we'll formulate it like so:
+In every set of n >= 1 horses, all are the same color. 
+
+Since it's a statement about all integers greater or eq to 1, it's fine to prove P(1) is the base case and then prove that P(n) implies P(n+1) for all n greater than or equal to one in the inductive step. 
+
+Proof by induction:
+
+Base case for n = 1 is P(1) is true, since in a set of horses of size 1, there's only one horse and the horse is the same color as itself. 
+
+Inductive step: Assume P(n) is true for some n bigger than or equal to 1. That is, assume that in every set of horses, all are the same color. Now consider a set of n + 1 horses:
+
+h1, h2, ... , hn, hn+1
+
+By our assumption, the first n horses are the same color. 
+```
+h1, h2, ..., hn, hn+1
+|--------------|
+```
+
+By our assumption, the last n horses are the same color. 
+
+```
+h1, h2, ..., hn, hn+1
+    |----------------|
+```
+
+Therefore all horses must be the same color! 
+
+Where's the error?
+
+It is in the sentence saying that "therefore, horses h1, h2, ... hn, hn+1 must all be the same color." The ellipses looks like the sets (in my two above code blocks) overlap. But actually, the first set is h1, and the second set is h2, and there is no overlap. 
+
+We proved P(1), and we did prove P(2) --> P(3), and onwards. But we never proved P(1) ---> P(2).
+
+# Strong Induction
+
