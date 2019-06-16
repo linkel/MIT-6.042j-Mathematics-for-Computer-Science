@@ -152,3 +152,130 @@ We proved P(1), and we did prove P(2) --> P(3), and onwards. But we never proved
 
 # Strong Induction
 
+Both strong and regular induction are used for the same purpose. They prove that a predicate P(n) is true for all n in N. 
+
+## Principle of strong induction
+
+Let P(n) be a predicate.
+
+1. If P(0) is true and
+2. for all n in N, P(0), P(1), ..., P(n) together imply P(n+1)
+
+then P(n) is true for all n in N. 
+
+Strong induction lets me assume more stuff. So if regular induction isn't enough for a proof that feels like it can be proved with induction, maybe strong induction is what I want? 
+
+# Products of Primes example
+
+Lemma 3.1:
+Every integer greater than 1 is product of primes. 
+
+Any number is considered to be a product consisting of one term. Every prime is considered to be a product whose terms are all primes. 
+
+We'll prove Lemma 3.1 by strong induction. The induction hypothesis will be:
+n + 2 is a product of primes. 
+
+So the lemma will follow if prove that P(n) holds for all n greater or equal to 0. 
+
+Base Case: P(0) is true because 0 + 2 is prime, and so that is also a product of primes by that convention stated up above. 
+
+Inductive step: Suppose that n greater than or equal to 0 and that i + 2 is a product of primes for every natural number i < n + 1. We must show that P(n+1) holds, namely, that n + 3 is also a product of primes. 
+
+So if n+3 is prime, then it's a product of primes by convention as well. But if it isn't, then n + 3 must be equal to k * m for some natural numbers k and m (since you can divide it by something that isn't itself or 1). So 2 is less than or equal to k and k is less than n + 3 since we can divide it down. Same goes for m. 
+
+So k - 2 is a natural number less than n + 1 (because n + 3 we just said is bigger than k when we're talking about k*m where n is not one of them and 1 is not one of them, so subtracting 2 from k is smaller since n + 3 - 2 is n + 1). 
+
+That means that (k - 2) + 2 is a product of primes, since k - 2 is something smaller than n + 1 and we said that n + 2 is a product of primes for our induction hypothesis.
+
+Though I'm getting kind of confused here. 
+
+So if k is a product of primes due to the induction hypothesis and m is also a product of primes, then km = n + 3 is also a product of primes. Therefore P(n+1) holds here too. 
+
+Any theorem that can be proved by strong induction can be proved with regular induction using a more complex induction hypothesis. If P(n) is sufficient to prove P(n+1) then regular induction is fine and simpler.
+
+# Making Change example
+
+6, 10, and 15 unit value coins. 
+
+This country that has coins of the above value can make change for any number of unit values greater than 29. 
+
+Strong induction makes this easy to prove for n + 1 > 35, because (n+1) - 6 > 29, so by strong induction they can make change for ((n+1) - 6) unit value, and can add a 6 coin in to get (n+1). 
+
+What's left is to prove that they can make change for all amounts from 30 to 35. 
+
+## Vacuous truth
+
+If n > 29, then there is a collection of coins whose value is n Strongs (their unit of currency). 
+
+When a hypothesis of an implication like above is false, we know the whole implication is true--vacuously true. So P(n) will be vacuously true whenever n <= 29.
+
+## Back to proving it
+
+So using that above as P(n), we look at the base case.
+
+Base case: P(0) is vacuously true. 
+
+Inductive step: We assume that P(i) holds for all i <= n and prove that P(n+1) holds, we argue by cases.
+
+Case (n + 1 <= 29): P(n+1) is vacuously true.
+Case (n + 1 = 30): P(30) holds because 5 x 6 coins gets here. 
+Case (n + 1 = 31): 6 + 10 + 15.
+Case (n + 1 = 32): 10 + 10 + 6 + 6
+Case (n + 1 = 33): 15 + 6 + 6 + 6
+Case (n + 1 = 34): 10 + 6 + 6 + 6 + 6
+Case (n + 1 = 35): 10 + 10 + 15
+Case (n + 1 = 36): Add a 6 coin to the 30 case. Beginning of the strong induction steps. 
+So for everything above 35, they can just add a 6 coin to any previous case. 
+
+So P(n+1) is true, and we conclude by strong induction that for all n > 29, they can make change for n strongs. 
+
+The proof also yields a recursive procedure for making change. They can make change for any amount greater than 29 using only one 15 coin, at most 2 10's, and lots of 6 coins. 
+
+# Unstacking example
+
+Begin with a stack of n boxes. Make a sequence of moves. In each move, divide a stack into two nonempty stacks. 
+
+Game ends when I have n stacks, each containing a single box. 
+
+If I divide 1 stack of height a + b into two stacks with heights a and b, I score a*b points for that move. Overall score is sum of the points earned for each move. 
+
+Seems like my strategy would be to make sure I separate stacks into as even separations as possible. 4*5 would get me 20 which is preferred over 8 * 1. 
+
+WAIT NO
+
+Score's determined by the number of boxes. Dammit! 
+
+Theorem 3.2:
+
+Every way of unstacking n blocks gives a score of n*(n - 1) / 2 points. 
+
+## Analysis
+
+So it's okay to adjust indices by the way. We can prove P(1) in the base case and then prove that P(1) ... P(n-1) imply P(n) for all n greater than or equal to 2 in the inductive step.
+
+Proof:
+
+Proof is by strong induction. Let P(n) be that above proposition I wrote down in Theorem 3.2. 
+
+Base case:
+
+If n = 1 then there's only one block. No moves are possible so the score is 0. P(1) is true. 1(1-1)/2 = 0. 
+
+Assume that P(1) ... P(n - 1) are all true and that we have a stack of n blocks. The first move must split the stack into substacks with sizes k and n - k for some k between 0 and n noninclusive. 
+
+Now the total score for the game is the sum of points for this first move plust points obtained by unstacking the two resulting substacks. Yep. 
+
+Total score is equal to (score for 1st move) + (score for unstacking k blocks) + (score for unstacking n - k blocks).
+
+Not gonna write this equation down, but adding these three parts seems to simplify back down to n(n-1)/2. 
+
+We use P(k) and P(n-k) in the equations. 
+
+# Well Ordering Principle
+
+Every nonempty subset of natural numbers has a smallest element. 
+
+Note that you can transform any proof using the Well Ordering Principle into a proof using Strong Induction and vice versa. 
+
+Well-ordering proofs tend to be shorter than induction but usually need proof by contradiction. 
+
