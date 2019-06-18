@@ -1,0 +1,44 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+
+\title{MIT 6.042J HW2 2005}
+\author{Kelly Lin }
+\date{June 2019}
+
+\begin{document}
+
+\maketitle
+
+\section{Problem 1}
+Use induction to prove that the following inequality holds for integers $n \geq 1$.
+\begin {align*}
+\frac{1 * 3 * 5 ... (2n + 1)}{2 * 4 * 6 ... (2n + 2)} \geq \frac{1}{2n + 2}
+\end {align*}
+\\
+Base case P(0) holds because result is $1/2 \geq 1/2$
+\\
+Restating it, P(n) is:
+\begin {align*}
+\frac{1 * 3 * 5 ... (2n + 1)}{2 * 4 * 6 ... (2n + 2)} \geq \frac{1}{2n + 2}
+\end {align*}
+And P(n+1) is:
+\begin {align*}
+\frac{1 * 3 * 5 ... (2n + 1)(2n + 3)}{2 * 4 * 6 ... (2n + 2)(2n + 4)} \geq \frac{1}{2(n+1) + 2}
+\end {align*}
+Where the right hand side simplifies to:
+\begin {align*}
+\frac{1 * 3 * 5 ... (2n + 1)(2n + 3)}{2 * 4 * 6 ... (2n + 2)(2n + 4)} \geq \frac{1}{2n + 4}
+\end {align*}
+Let's multiply both sides by 2n+3 and divide both sides by 2n+4. 
+\begin {align*}
+\frac{1 * 3 * 5 ... (2n + 1)*(2n + 3)}{2 * 4 * 6 ... (2n + 2)*(2n + 4)} \geq \frac{1}{2n + 2} *\frac{(2n + 3)}{(2n + 4)}
+\end {align*}
+We know by regular math rules that the above keeps that inequality relation. We can see that for the 2n+3 and 2n+2 on the right hand side, $\frac{2n + 3}{2n + 2}$ will always be bigger than 1. So we can say that it's contributing to making the right side having the possibility of being equal to the left hand side. So without the influence of those two, $\frac{1}{2n + 4}$ is definitely smaller than the LHS.
+\begin {align*}
+\frac{1 * 3 * 5 ... (2n + 1)*(2n + 3)}{2 * 4 * 6 ... (2n + 2)*(2n + 4)} > \frac{1}{2n + 4}
+\end {align*}
+Look, it's agreeing with P(n+1) that we stated earlier--where up there LHS is greater than or equal to RHS, and here LHS is greater than RHS. So P(n) implies P(n+1), and the inequality holds for all integers greater than or equal to n.  
+\section{Problem 2}
+\end{document}
+
