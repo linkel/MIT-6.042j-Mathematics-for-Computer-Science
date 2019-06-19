@@ -40,5 +40,36 @@ We know by regular math rules that the above keeps that inequality relation. We 
 \end {align*}
 Look, it's agreeing with P(n+1) that we stated earlier--where up there LHS is greater than or equal to RHS, and here LHS is greater than RHS. So P(n) implies P(n+1), and the inequality holds for all integers greater than or equal to n.  
 \section{Problem 2}
+a.
+\\
+\\
+So we have P(n) is true for 8, 9, and 10 by showing each case of how to break those into groups of 4 or 5. But then saying that for P(n+1) that we can divide the remaining n - 3 students into groups of 4 or 5 by the assumption P(n-3) is incorrect because for n = 10, or n+1 = 11, P(n - 3) is P(7) which is not in our assumptions. And you can also see that 11 can't be divided up into groups of 4 or 5 only. \\\\
+b.
+\\
+\\
+Let P(n) be that a class with n $\geq$ 12 students can be divided into groups of 4 or 5. 
+\\
+We show the cases for 12 through 15:\\\\
+n = 12: 4 + 4 + 4 
+\\\\
+n = 13: 5 + 4 + 4
+\\\\
+n = 14: 5 + 5 + 4
+\\\\
+n = 15: 5 + 5 + 5
+\\\\
+So how can we show that P(12),...,P(n) imply P(n+1) for all n $\geq$ 15?
+\\
+Assume P(12),...,P(n) are true. We have a class of n + 1 students. 
+\\\\
+1. Form one group of 4 students.
+\\\\
+2. Divide the remaining n - 3 students into groups of 4 or 5 by the assumption P(n - 3).
+\\\\
+3. For an n $\geq$ 15, n - 3 would be $\geq$ 12, so P(n - 3) is among our assumptions. 
+\\\\
+4. You can do this for any n $\geq$ 15. 
+\section{Problem 3}
+
 \end{document}
 
