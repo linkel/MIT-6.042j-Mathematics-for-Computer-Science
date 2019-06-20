@@ -70,6 +70,35 @@ Assume P(12),...,P(n) are true. We have a class of n + 1 students.
 \\\\
 4. You can do this for any n $\geq$ 15. 
 \section{Problem 3}
+Stick game. \\\\
+P(n) is:\\\\
+If the number of sticks equals 4k + 1 for some $k \in N$, the second player has a winning strategy, otherwise, the first player has a winning strategy. 
+\\
+Base case P(1) is that k is equal to 0, one stick. First player is forced to take the stick and loses. 
+\\\\
+Assume that P(1) to P(n) are true. How can I prove that P(n+1) follows? \\\\
+Proof by cases: \\\\
+$n+1 = 4k$\\\\
+In this case, player 1 will remove three sticks to turn the state of the sticks to $4(k - 1) + 1$ since the k drops a number and we can make up for it with the outside addition number (this made sense in my head), and then when player 2 begins her turn she has a losing strategy because it puts her in the 4k + 1 zone. 
+\\\\
+$n+1 = 4k + 1$\\\\
+In this case, player 1 could try to remove 1 stick, but then that gives player 2 4k and that's a losing state for player 1 now. 
+\\
+Player 1 can try to remove 2 sticks but then that gives player 2 $4(k-1) + 3$ which is a losing state for player 1 and a winning state for player 2. 
+\\
+Player 1 can try to remove 3 sticks but that gives player 2 $4(k - 1) + 2$ which is a losing state for P1. 
+\\\\
+So in all possibilities here, P1 has the losing strategy. 
+\\\\
+$n+1 = 4k + 2$\\\\
+In this case, player 1 can remove 1 stick to turn the state to $4k + 1$ for P2, which is a winning state for P1. 
+\\\\
+$n + 1 = 4k + 3$\\\\
+Player 1 can remove 2 sticks to turn the state to $4k + 1$ for P2, which is a winning state for P1. 
+\\\\
+So in all these cases P(n + 1) stays true. 
+
+\section {Problem 4}
 
 \end{document}
 
