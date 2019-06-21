@@ -99,6 +99,20 @@ Player 1 can remove 2 sticks to turn the state to $4k + 1$ for P2, which is a wi
 So in all these cases P(n + 1) stays true. 
 
 \section {Problem 4}
-
+a. \\\\
+Honestly, I don't understand this. Let's say we have a smallest collection such that player 1 and player 2 have NO winning strategy. This collection, let's call it C, has a next state C2 after a player 1 move that cannot be a winning position for player 1 or 2 because if it did have a winning position for player 1 then player 1 was already in a winning position at the time of C. Likewise for player 2 having a winning position at state C2--they'd have had a winning position at state C. How the heck does this follow that at least one such state must have no winning strats for both players? How does it follow that such a state is a smaller collection than S? 
+\\\\
+I guess it's because if P1 could move so that P2 couldn't win, then in the next state when it's P2's turn there also cannot be a move P2 can do to win because then it'd mean that the previous state where P1 was was actually a P2 win and the move P1 did obviously failed to prevent the win. And if P2 is gonna lose then it means that P1 was making a move to WIN, not prevent wins in a no-win state. So this new state is ALSO a state where there's some kind of no-win move possibility, which means that it's SMALLER than the original smallest collection which is impossible, so it's a contradiction.
+\\\\
+b. \\\\
+If the whole set A is a possible move in the game, then this means that there's only two cases after the initial state. Let's call this current special set A game GSpecial and the original game that disallows selection of set A GRegular. 
+\\\\
+Case 1: \\
+Player 1 has a winning strategy in GRegular. In which case Player 1 plays as normal in GSpecial. Once Player 1 makes a play it's not possible anymore for Player 2 to make the Set A play because something in it has already been picked. We never said that you could play a Set A - pickedSet play, so it's done--P1 wins like if they played in a GRegular game. 
+\\\\
+Case 2: \\
+Player 2 has a winning strategy in GRegular. In which case Player 1 just plays Set A, and now Player 1 has selected everything and P2 has nothing to pick. So by playing Set A Player 1 gets to put herself in P2's spot, and it's done. 
+\\\\
+In both the cases above Player 1 has winning strats, so this game is super biased. 
 \end{document}
 
