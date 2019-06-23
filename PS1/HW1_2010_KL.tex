@@ -11,7 +11,27 @@
 \maketitle
 
 \section{Problem 1}
-
+a. There are people who have taken 6.042 and have gotten A's in 6.042. 
+For one person:
+\begin {align*}
+\exists x \in X. S(x) \wedge A(x)
+\end {align*}
+For at least two people:
+\begin {align*}
+\exists x, y \in X. S(x) \wedge A(x) \wedge S(y) \wedge A(y) \wedge \neg E(x,y)
+\end {align*}
+b. All people who are 6.042 TAs and have taken 6.042 got A's 6.042. 
+\begin {align*}
+\forall x \in X. T(x) \wedge \neg A(x) \rightarrow A(x)
+\end {align*}
+c. There are no people who are 6.042 TAs who did not get A's in 6.042.
+\begin {align*}
+\neg (\exists x \in X. (T(x) \wedge \neg A(x)))
+\end {align*}
+d. These are at least three people who are TAs in 6.042 and have not taken 6.042. 
+\begin {align*}
+\exists x,y,z \in X. (T(x) \wedge \neg S(x)) \wedge (T(y) \wedge \neg S(y)) \wedge (T(z) \wedge \neg S(z)) \wedge (\neg E(x,y) \wedge \neg E(y,z) \wedge \neg E(z,x))
+\end {align*}
 \section{Problem 2}
 a. Use a truth table to prove or disprove the following:
 \begin {align*}
@@ -43,6 +63,23 @@ iii. $A \rightarrow B$
 $A \; nand \; (\neg B)$
 \\
 For this one, we want something that will be true except when A is false and B is true. Because for all the other combos of A and B, they are valid. However when A is false and B is true, A implies B so if A is true and B is false that's not implying and the statement doesn't hold.
+\\\\
+b. Find an equivalent expression for $\neg A$ using only nands.
+\\\\
+$A \; nand \; A$ gives not A.
+\\\\
+c. Construct an expression using A and nand that evaluates to true regardless of whether A is true or false. Then do the same for one that evaluates to false.
+\\\\
+For true:
+\\
+$(A \; nand \; A) \; nand \; A$
+\\\\
+And for false:\\
+$((A \; nand \; A) \; nand \; A) \; nand \; ((A \; nand \; A) \; nand \; A)$
+\\
+Basically just not-ing itself, since not is the self nand self construction as written above in part c. 
+\\
+\section{Problem 4}
 
 \end{document}
 
