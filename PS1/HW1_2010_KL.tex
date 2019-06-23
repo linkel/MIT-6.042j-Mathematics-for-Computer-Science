@@ -1,0 +1,48 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+
+\title{MIT 6.042J HW1 2010}
+\author{Kelly Lin }
+\date{June 2019}
+
+\begin{document}
+
+\maketitle
+
+\section{Problem 1}
+
+\section{Problem 2}
+a. Use a truth table to prove or disprove the following:
+\begin {align*}
+\neg (P \vee (Q \wedge R)) = (\neg P) \wedge (\neg Q \vee \neg R)
+\end {align*}
+I made a truth table on scratch paper--not interested in reproducing it on here. 
+This equation is true. There are 5 cases that are false and 3 that are true and they match up. 
+\\\\
+b.
+\begin {align*}
+\neg (P \wedge (Q \vee R)) = \neg P \vee (\neg Q \vee \neg R)
+\end {align*}
+This equation is false. The LHS has three false and 5 true. The RHS had 1 false and 7 true. 
+\section{Problem 3}
+Using nand, find an equivalent expression.
+\\
+i. $A \wedge B$
+\\
+$\neg (A \; nand \; B)$
+\\\\
+ii. $A \vee B$
+\\
+$(\neg A \; nand \; \neg B)$
+\\
+I actually came up with the nand version of it before I did the not version.
+\\\\
+iii. $A \rightarrow B$
+\\
+$A \; nand \; (\neg B)$
+\\
+For this one, we want something that will be true except when A is false and B is true. Because for all the other combos of A and B, they are valid. However when A is false and B is true, A implies B so if A is true and B is false that's not implying and the statement doesn't hold.
+
+\end{document}
+
