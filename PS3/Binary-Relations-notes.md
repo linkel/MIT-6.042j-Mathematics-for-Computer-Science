@@ -82,4 +82,55 @@ The set A is made up of elements. The elements can be grouped into subsets of A.
 
 I think. 
 
+Congruence Modulo is another kind of equivalence. An integer k and an integer m are congruent modulo an integer n > 1 iff m and k have the same remainder on division by n. This is like that pentagon looking graph you saw in that one explanation of congruent modulo. 
+
+m triple equals k mod n. 
+
+## Partitions
+
+Cutting up a set into a bunch of pieces is called partitioning the set. Each piece is called a block of the partition. 
+
+A partition is a collection of nonempty sets. 
+
+Set A and Partition B with blocks B1, B2, B3...
+
+1. A is equal to the union of all of those blocks together. 
+
+2. If B1 is different from B2 and they're blocks of A, then B1 and B2 are disjoint. 
+
+Basically these blocks are nonoverlapping chunks of A. All of those blocks together is a partition of set A. 
+
+Ex: You can partition the real line into blocks by cutting it at integer points. You can partition pixels in an image according to their color. 
+
+Being in the same block of a partition is an equivalence relation. Any partition then has an equivalence relation we can extract, and we can also define a partition determined by any equivalence relation. If you extract a relation from a partition then use that partition to determine an equivalence relation, you get back the partition you started with. They're interchangeable.
+
+I'm not sure how much I understand this last part. 
+
+### Sameness
+
+You can see that there's a lot of equivalence relations. Really what we're looking at is the sameness of some property of objects. 
+
+## Properties of Equivalence Relations
+
+Reflexive, symmetric, and transitive are the three properties important to think about here. 
+
+For every a in A, if and only if a R a, it's reflective.
+
+For every a and a prime in A, iff a R a prime implies a prime R a, it's symmetric. 
+
+For every a, b, c in A, iff [a R b and b R c] imply a R c, then it's transitive. 
+
+Examples:
+- Less than relation. It's transitive, since 4 < 6 and 6 < 8 then do say that 4 < 8. But it isn't reflexive since 4 < 4 is not true, and it isn't symmetric since 5 < 6 does not imply 6 < 5. 
+- Proper subset relation. A subset B and B subset C do imply that A subset C. It's transitive. It's not reflexive since proper subsets aren't the same as each other, so A subset A is not true. It's not symmetric since A subset B is not B subset A. 
+- Implies relation for math logic. It's not symmetric since A --> B doesn't mean B --> A. It's reflexive since A --> A is valid. It is also transitive, since if A --> B and B --> C then A --> C. 
+
+Let R be the relation on sets, C, D, of natural numbers such that C R D iff C intersects D is finite. This is symmetric but not reflexive. Explain why it is not transitive. 
+
+You can have a set of stuff in a set A that intersects with stuff in set B. Then you can have stuff in set B that intersects with stuff in set C. But it's possible that A's stuff doesn't intersect with C's stuff. Like if A had 2 yellow balls and 3 black balls, B had 3 black balls and 1 white ball, and C has 1 white ball. So it isn't transitive. 
+
+More confusing to me is how the notes say it's not reflexive. I get that it isn't reflexive for N R N because all the natural numbers are infinite and then the intersection is not finite. But what if it's just finite natural numbers like 4, 5, 6, then related with themselves? Isn't that a finite intersection? Or does this have to be true for all possible sets? 
+
+
+
 
