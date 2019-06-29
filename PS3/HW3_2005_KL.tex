@@ -15,41 +15,65 @@ On the set {0, 1}, list out the binary relations.
 \\
 Empty set
 \\
-(0,0)
+1. (0,0)
 \\
-(1,1)
+2. (1,1)
 \\
-(0,1)
+3. (0,1)
 \\
-(1,0)
+4. (1,0)
 \\
-(0,0)(1,1)
+5. (0,0)(1,1)
 \\
-(0,0)(1,0)
+6. (0,0)(1,0)
 \\
-(0,0)(0,1)
+7. (0,0)(0,1)
 \\
-(1,1)(1,0)
+8. (1,1)(1,0)
 \\
-(1,1)(0,1)
+9. (1,1)(0,1)
 \\
-(1,0)(0,1)
+10. (1,0)(0,1)
 \\
-(0,0)(1,0)(0,1)
+11. (0,0)(1,0)(0,1)
 \\
-(0,0)(1,1)(0,1)
+12. (0,0)(1,1)(0,1)
 \\
-(0,0)(1,1)(1,0)
+13. (0,0)(1,1)(1,0)
 \\
-(1,0)(0,1)(1,1)
+14. (1,0)(0,1)(1,1)
 \\
-(0,0)(1,0)(0,1)(1,1)
+15. (0,0)(1,0)(0,1)(1,1)
 \\\\
 b. Which are weak partial orders? Strict partial orders? Equivalence relations?
 \\\\
 Empty set is symmetric. 
 
-Wait, I don't understand how to decide whether a binary relation is transitive for these sets of 0 and 1. 
+I don't know if this is the best way to think of it, but reflexive is when all numbers included in the relation are connected to themselves. Transitive is when a number A visits another number B and number B visits a number C (which could be A), you also have the number A visiting C listed. Symmetric is when a number A going to another number B also then has B going to A. 
 
+So the reflexive ones are: \\
+5, 12, 13, 15
+\\ The reason why none of the single group ones are reflexive is because reflexivity applies over the set, and our set has both 0 and 1 so it needs 0,0 and 1,1 to be reflexive. 
+\\\\
+Transitive ones are:\\
+Empty set, 1, 2, 3, 4, 5, 6, 7, 8, 9, 12, 13, 15, 
+\\\\
+Symmetric ones are:\\
+Empty set, 1, 2, 5, 10, 11, 14, 15
+\\\\
+Antisymmetric confuses me. The definition in the text says that it's if $aRb \rightarrow \neg (bRa)$, but that is confusing me. Online I see someone saying it's antisymmetric unless there's some a and b for which aRb and bRa yet nevertheless a is not equal to b. So I'm guessing that the text definition intends that a and b are unique and not equal. So if there's a unique a and there's a unique b and they have that relation between them such that aRb, then it follows that it doesn't go back the way around to bRa. So if there's some a and b where b IS a, and they have the relation of aRb and bRa, that's fine and still antisymmetric. 
+\\
+\\
+Antisymmetric ones are: \\
+Empty set, 1, 2, 3, 4, 5, 6, 7, 8, 9, 12, 13
+\\\\
+Okay, now that that's out of the way, which are weak partial orders? Weak partial orders are transitive, antisymmetric, and reflexive. So that's: \\
+5, 12, and 13
+\\\\
+The strict partial orders are those that are transitive, antisymmetric, and irreflexive. \\
+Empty set, 1, 2, 3, 4 (Answer key deviates from this...says 1 and 2 aren't. Not clear on this.)
+\\\\
+Equivalence relations are transitive, symmetric, and reflexive. \\\\
+5 and 15.
 \end{document}
 
