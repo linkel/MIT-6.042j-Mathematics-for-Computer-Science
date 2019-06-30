@@ -131,6 +131,30 @@ You can have a set of stuff in a set A that intersects with stuff in set B. Then
 
 More confusing to me is how the notes say it's not reflexive. I get that it isn't reflexive for N R N because all the natural numbers are infinite and then the intersection is not finite. But what if it's just finite natural numbers like 4, 5, 6, then related with themselves? Isn't that a finite intersection? Or does this have to be true for all possible sets? 
 
+Okay, yeah, after marinating in this for a bit and asking questions, I think yes, it's gotta be reflexive for all sets. Reflexivity for a relation is only reflexive if it's satisfied by everything inside the relation for that set. Like if we list all the binary relations for the set {0,1}, {(0,0)} is not reflexive because the set includes 1 and we need 1,1 in there for it to be reflexive. Also irreflexivity requires that everything in it is not reflexive, so {(0,0)} is also NOT irreflexive. It's just nonreflexive. 
 
+## Equivalence by Axioms
 
+These properties: reflexivity, symmetry, and transitivity if satisfied mean that the relation is a equivalence relation. 
 
+We can always show that a relation is not an equivalence by finding two or three elements of the domain where the axioms fail to hold. Uh, does it have to be two or three? Does one not suffice? 
+
+Define two positions of the pieces in the game of chess to be mutually reachable if it's possible to start at one and get to the other by a sequence of legal chess moves. We can't really describe a function f such that mutual reachability equals triple equals sub f. Prove that mutual reachability is an equivalence relation anyway. 
+
+Okay, so positions a and b are mutually reachable if a R b. Is R reflexive? So if positions a and b are the same spot, you've started in a and you've ended at b by making no moves, which I guess is a fine thing for you to do. So R's reflexive. Is R symmetric? Thinking of the possible moves on a board, if you get to one AND can get back legally then a R b and b R a. So for example a pawn move wouldn't be mutually reachable since you can't walk that pawn back. But if you moved a bishop somewhere and you could move it back legally that's mutually reachable. And hence in order for that to be possible it's symmetric. Is R transitive? If I was at board state A and made a sequence of moves to get to a board state B. And from board state B I made a sequence of moves to get to board state C. Then I can go from A to C with just adding that sequence of moves I made from A to B and from B to C. Then it is transitive. And it looks like that makes it an equivalence relation. 
+
+## Partial Orders
+
+For any element a, we think of a function g such that g(a) is the set of properties that a has. We can relate different elements according to how their properties compare. All partial orders arise thusly. 
+
+Not sure I get it. 
+
+So if we've got a total function g from a set A to a collection of sets, we define the binary relation on A by the rule
+
+a is partial order binary relation'd to b iff g(a) strict subset g(b) for a,b in A. 
+
+A binary relation R on a set A is a partial order iff there's a g such that R agrees with partial order binary relation symbol sub g for every pair of distinct elements. That is,
+
+a R b iff a partial order binary relation'd sub g b for all a not equals to b in A. 
+
+The subset relation is a partial order. If A's a collection of sets, then the 
