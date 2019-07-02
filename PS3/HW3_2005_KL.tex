@@ -71,9 +71,19 @@ Okay, now that that's out of the way, which are weak partial orders? Weak partia
 5, 12, and 13
 \\\\
 The strict partial orders are those that are transitive, antisymmetric, and irreflexive. \\
-Empty set, 1, 2, 3, 4 (Answer key deviates from this...says 1 and 2 aren't. Not clear on this.)
+Empty set, 3, 4. Irreflexive is different from nonreflexive--everything in it needs to not be reflexive individually for it to be irreflexive, so 1 and 2 are out.
 \\\\
 Equivalence relations are transitive, symmetric, and reflexive. \\\\
 5 and 15.
+
+\section{Problem 2}
+a. Partially order the power set P({1,2,...,n} by subset relation. Describe a maximum length chain and explain why there cannot be a longer chain that it. 
+\\\\
+The maximum length chain would be one where we have Empty Set, {1}, {1,2}, {1,2,3}, {1,2,3,4}, ... And onwards until it is of a total length n + 1 (because of the empty set). \\
+There can't be a chain longer than this because we've gone through the entire power set. Can't have repeats, and if we had duplicate sized sets made up of different numbers, they wouldn't be subsets of each other and would break the chain. 
+\\\\
+b. Describe a topological sort and explain why your sort is correct.
+\\
+A topological sort would be starting from the empty set (since it is a subset of every set), then all sets that are length 1, like {1} or {2}, in any order. Then all sets that are length 2, and so on until a set of all the numbers up to n. That last one would contain all the ones before it. 
 \end{document}
 
