@@ -1,0 +1,41 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+
+\title{2005 In-Class Problems Week 4}
+\author{ Kelly Lin }
+\date{July 2019}
+
+\begin{document}
+
+\maketitle
+
+\section{Problem 1}
+Problem 1. In each case, say whether or not R is a equivalence relation on A. If it is an equivalence
+relation, what are the equivalence classes and how many equivalence classes are there?
+\\\\
+(a) R ::= {$(x, y) \in W \times W $| the words x and y start with the same letter} where W is the set of all words in the 2001 edition of the Oxford English dictionary.
+\\\\
+Yes, R is an equivalence relation. It's reflexive because a word starting with the same letter indeed is related in this way to itself. Likewise it's transitive and symmetric. The equivalence classes are the letters of the alphabet, of which there are 26 in the English alphabet. So 26 equivalence classes. 
+\\\\
+(b) R ::= {$(x, y) \in W \times W |$ the words x and y have at least one letter in common}.
+\\\\
+This is reflexive and symmetric but it is not transitive. A word like "tap" and "soothe" are related, and "soothe" and "son" are related, but "tap" and "son" are not. So it is not an equivalence relation.
+\\\\
+(c) R = {$(x, y) \in W \times W$ and the word x comes before the word y alphabetically}.
+\\\\
+This is transitive. But it isn't reflexive since a word doesn't come before itself. It also isn't symmetric. It's actually antisymmetric, since if xRy and x is not equal to y, it is impossible for yRx. So it isn't an equivalence relation. However, it's a partial order.
+\\\\
+(d) R = ${(x, y) \in R \times R$ and abs( x ) less than or equal to abs( y )}.
+\\\\
+This is reflexive because of the equality part of the operator. It is not symmetric. It is transitive. It is not antisymmetric. If xRy here and x is not equal to y, it is still possible for yRx if they're opposing signs. 
+\\\\
+(e) R = {$(x, y) \in B \times B$, where B is the set of all bit strings and x and y have the same number of
+1s.}
+\\\\
+This is an equivalence relation. It's reflexive, transitive, and symmetric. The equivalence class is how many ones there are. So there are as many classes as there are possible to be ones in the bitstring. 
+
+\end{document}
+
+
+
