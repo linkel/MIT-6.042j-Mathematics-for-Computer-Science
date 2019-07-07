@@ -1,0 +1,46 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+
+\title{2005 In-Class Problems Week 4 Part 2}
+\author{ Kelly Lin }
+\date{July 2019}
+
+\begin{document}
+
+\maketitle
+
+\section{Problem 1}
+Problem 1. 
+\\
+R2 consists of all pairs of buildings connected by traversing exactly 2 edges. Compute R2. 
+\\
+Okay, so we see that every building also has an edge connected to itself. This means we can spend one edge on itself and then move along another edge, so everything in R2 also contains R. 
+\\
+The extra pairs in R2 are (13,4),(4,13),(10,12),(12,10),(10,8),(8,10),(4,26),(26,4),(12,8),(8,12). So R2 consists of R union with those extra pairs listed here. And I think that it contains (13,13) which R contains, because you could traverse that edge twice. \\
+R<=2 consists of all pairs of buildings connected by traversing at most 2 edges. 
+\\
+So this allows traversing 1 edge and traversing 0 edges, too, I think. Nothing changes between R2 and R<=2. They're the same in this case.
+\\\\
+R3 consists of all pairs of buildings  connected by traversing exactly 3 edges. 
+\\
+Like with R2, R3 must include R2 and R1 because you can repeat traversals. The extra pairs we get from the 3 edge travel are:
+\\
+(13,8),(8,13),(10,26),(26,10),(13,12),(12,13),(12,26),(26,12).
+\\\\
+If all self-loops were removed, would R2 equal R<=2?
+\\\\
+No, because now R2 now cannot spend edges on traversing the same building. R2 would still have (13,10) for example which R<=2 would have, but R2 wouldn't have (13,13) because it cannot traverse in same building twice. And R<=2 would have (13,13) since it could traverse 0 edges.
+
+\section{Problem 2}
+a. What are the maximal and minimal elements of the set N of all natural numbers under divisibility? Is there a maximum or minimum element? 
+\\\\
+Yes, there is. Minimum is 1 because everything is divisible by 1 and nothing can divide it. Maximum is 0 because 0 can be divided by everything. So if the divisibility relation R in aRb is that b is divisible by a (or a divides b), then something that divides everything is the min element and something that everything else can divide is the max element. Though I wonder at whether this order is standardized somewhere--can't I conceptualize it the opposite way to? That if you can divide everything you're the max? Or is it that if you can divide everything you're the starting element? 
+\\\\
+b. What are the minimal and maximal elements of the set of integers >= 2under divisibility?
+\\\\
+The prime numbers, since they cannot be divided by anything else, seem to be the minimal elements. With multiple minimal elements that cannot be compared to each other, I guess there's no minimum. Also there isn't a maximal element, since it goes on forever. There's always a bigger natural number that can be divided by more things than the previous biggest. 
+\end{document}
+
+
+
