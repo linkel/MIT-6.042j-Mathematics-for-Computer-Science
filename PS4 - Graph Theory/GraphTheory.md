@@ -198,3 +198,49 @@ For any path of length k in a graph, there is a simple path of at most k with th
 
 ## Minimum Number of Edges in a Connected Graph
 
+A graph with k vertices and n edges has at least k minus n connected components. 
+
+Seems to make sense! If I have 3 vertices and they're connected in a triangle that's 3 vertices and 3 edges, and it's got at least 0 connected components (it's got 1). 
+
+```
+O---O
+ \ /
+  O
+```
+
+This one's got 3 vertices and 2 edges! It's got at least 1 connected component, yep.
+```
+O---O---O
+```
+
+```
+O---O   O
+```
+3 vertices and 1 edge! It's got at least 2 connected components.
+
+```
+O O O
+```
+3 vertices, no edges. At least 3 connected components. 
+
+Okay, how can we prove it?
+
+We use induction on the # of edges. Let P(n) be that for every k, every graph with k vertices and n edges has at least k minus n connected components. 
+
+Base case: In a graph that's got 0 edges and k vertices, each vertex is itself a connected component, and so there's exactly k = k - 0 connected components. 
+
+Inductive step: We assume that the induction hypothesis P(n) holds for every n-edge graph and prove that it holds for every (n + 1)-edge graph where n >= 0.
+
+Let's take a graph G that has n + 1 edges and k vertices. We want to show that G has at least k minus (n + 1) connected components. 
+
+If we remove an arbitrary edge u to v and call the resulting graph Gprime, G prime has at least k - n connected components by the induction hypothesis. Because this guy has k vertices and n edges, he's the original assumption up to n. 
+
+Now let's add back that edge u to v to obtain the original graph G. 
+
+There's two cases:
+
+1. If u and v were in the same connected component of G prime, then G has the same connected components as G prime! So G has at least k - n > k - (n+1) components. 
+
+2. Otherwise, if u and v were in different connected components of G prime, then by adding it back those two components merge into one in G, and all other components remain unchanged in G, thus reducing the number of components by 1. 
+
+So G has at least (k - n) - 1 connected components. This is equal to k - (n + 1) connected components. 
