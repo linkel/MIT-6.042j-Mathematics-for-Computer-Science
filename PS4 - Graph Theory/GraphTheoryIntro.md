@@ -244,3 +244,11 @@ There's two cases:
 2. Otherwise, if u and v were in different connected components of G prime, then by adding it back those two components merge into one in G, and all other components remain unchanged in G, thus reducing the number of components by 1. 
 
 So G has at least (k - n) - 1 connected components. This is equal to k - (n + 1) connected components. 
+
+### Corollary
+
+Every connected graph with n vertices has at least n - 1 edges. 
+
+Induction is a common proof style for graphs. It's often done on the number of edges in the graph, or the number of vertices. Think about induction on these when you hit a graph problem, says the text. 
+
+In our inductive step in the previous proof, we took this (n + 1)-edge graph and threw out an edge to apply the induction assumption, then put the edge back. Apparently this is pretty common! Use the shrink-down, grow-back arguments. Beware thinking that you can just start with an n-edge graph and add one more to get an n+1 edge graph. That opens up some logical errors in certain proofs. 
