@@ -1,0 +1,33 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+
+\title{2005 In-Class Problems Graphs}
+\author{Kelly Lin }
+\date{July 2019}
+
+\begin{document}
+
+\maketitle
+
+\section{Problem 1}
+a. For any vertex v in a graph, let $\hat{v}$ be the set of vertices adjacent to v. Suppose f is an isomorphism from graph G to graph H. Carefully prove that f($\hat{v}$) is equal to $\widehat{f(v)}$.
+\\\\
+There's two parts we want to show to this. One is that $\widehat{f(v)} \subseteq f(\hat{v})$. We also want to show the reverse, that $f(\hat{v}) \subseteq \widehat{f(v)} $. If we show both then it means that they're equal.
+\\\\
+We can assume that there's some vertex w that is in the set of $\widehat{f(v)}$. This means that w to f(v) is an edge of H. Keep in mind that the output of anything given to the function f is in graph H. There consequently must be some v prime such that w = f(v prime). And we know that f(v prime) to f(v) is an edge of H, and that v prime to v is an edge of G because they're isomorphic. Consequently v prime is in the set of $\hat{v}$ and that f(v prime) is in the set of $f(\hat{V})$. 
+\\\\
+This shows that w is equal to f(v prime) and it's in the set of f($\hat{v}$).
+\\\\
+Now we can show the second part. w is in the set of f($\hat{v}$) and so then w is equal to f(v prime) for some v prime adjacent to v in G. So v to v prime is an edge of G, and f(v) to f(v prime) is an edge of H. Finally, w = f(v prime) is adjacent to f(v), meaning that w is in the set of $\widehat{f(v)}$.
+\\\\
+b. If G and H are isomorphic graphs, then for each k in the set of all natural numbers, they have the same number of degree k vertices. 
+\\\\
+The degrees of a vertex are equal to the size of the set of vertices adjacent to v. Isomorphism f maps the degree k vertices to degree k vertices. So there's got to be the same number of degree k vertices between these two graphs. 
+\\\\
+\section{Problem 2}
+
+
+\end{document}
+
+
